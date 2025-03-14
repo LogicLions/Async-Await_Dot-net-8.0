@@ -1,4 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Async_Await_ConsoleApp
 {
@@ -50,8 +55,7 @@ namespace Async_Await_ConsoleApp
 
         private static void TasksCompleted(Stopwatch sw)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("All tasks completed!!");
+            ConsoleUi.WriteSuccess("All tasks completed!!");
             sw.Stop();
             Console.WriteLine($"Execution Time: {Convert.ToInt32(sw.Elapsed.TotalSeconds)} seconds.");
             Console.ForegroundColor = ConsoleColor.White;

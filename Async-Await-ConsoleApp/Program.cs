@@ -1,16 +1,17 @@
-﻿using Async_Await_ConsoleApp;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using System;
 
 namespace Async_Await_ConsoleApp
 {
-    public class program
+    internal class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             ConsoleUi.DashLine();
             Console.WriteLine("Choose Operation below (Press 1 or 2 and Press Enter Key.)");
             Console.WriteLine("1.Synchronous Operation.");
             Console.WriteLine("2.Asynchronous Operation.");
+            Console.WriteLine("3.Await Operation.");
             ConsoleUi.DashLine();
 
             Console.WriteLine("Choice: ");
@@ -28,6 +29,10 @@ namespace Async_Await_ConsoleApp
                 {
                     AsynchronousProcessor.Start(sw);
                 }
+                else if (input == 3)
+                {
+                    AwaitOperator.Start();
+                }
                 else
                 {
                     ConsoleUi.Error("Wrong Choice!!");
@@ -42,4 +47,3 @@ namespace Async_Await_ConsoleApp
         }
     }
 }
-
